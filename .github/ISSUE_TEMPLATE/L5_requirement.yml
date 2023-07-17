@@ -1,0 +1,45 @@
+name: L5 Requirement
+description: Create an L5 requirement
+title: "[L5] "
+labels: ["Requirement: Level 5"]
+
+body:
+- type: markdown
+  attributes:
+    value: >
+      L5 requirements, which should be flowed down from L4 requirements.
+      These requirements are typically related to the implementation of
+      the L4 requirements, and there may additionally be subtasks that
+      can be created to complete the L5 requirement.
+
+- type: textarea
+  attributes:
+    label: "Summary of the L5 requirement"
+    description: >
+      A short summary of the L5 requirement.
+    placeholder: |
+      **Summary**
+  validations:
+    required: true
+
+- type: textarea
+  attributes:
+    label: "Parent requirement"
+    description: >
+      The L4 requirement that this L5 requirement is related to.
+    placeholder: |
+      **Parent requirement**
+  validations:
+    required: true
+
+- type: textarea
+  attributes:
+    label: "Tasks"
+    description: >
+      Tasks to complete this L5 requirement.
+    placeholder: |
+      **Tasks**
+      - [ ] Task 1 (can be issue # or PR #)
+      - [ ] Task 2 (can be issue # or PR #)
+  validations:
+    required: false
