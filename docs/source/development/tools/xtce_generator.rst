@@ -28,7 +28,10 @@ Before you Start
 
 Generating XTCEs is only done whenever packet definitions get updated, and thus it
 is not a part of the main processing package. To use it there are a few extra
-dependencies like `pandas` that you can install with
+dependencies like ``pandas`` that you can install with
+
+.. code::
+
     poetry install --extras tools
 
 How to Use
@@ -80,11 +83,7 @@ Generating Telemetry XML Files
 
 Once you have your xtce processing file defined, you can run it with the
 following command:
+
+.. code::
+
     python xtce_generator_instrument_name.py
-
-
-
-
-
-
-
