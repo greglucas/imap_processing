@@ -137,7 +137,6 @@ def write_cdf(dataset: xr.Dataset):
     xarray_to_cdf(
         dataset,
         str(file_path),
-        datetime64_to_cdftt2000=True,
         terminate_on_warning=True,
     )  # Terminate if not ISTP compliant
 
