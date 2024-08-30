@@ -39,7 +39,7 @@ def filter_good_data(full_sweep_sci: xr.Dataset) -> npt.NDArray:
     """
     # PLAN_ID for current sweep should all be one value and
     # SWEEP_TABLE should all be one value.
-    plan_id = full_sweep_sci["plan_id_science"].data.reshape(-1, 12)
+    plan_id = full_sweep_sci["plan_id"].data.reshape(-1, 12)
     sweep_table = full_sweep_sci["sweep_table"].data.reshape(-1, 12)
 
     mode = full_sweep_sci["mode"].data.reshape(-1, 12)
