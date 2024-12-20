@@ -72,7 +72,7 @@ def filter_good_data(full_sweep_sci: xr.Dataset) -> npt.NDArray:
     )
     logger.debug(
         "Plan ID should be same: "
-        f"{full_sweep_sci['plan_id_science'].data[bad_cycle_indices]}"
+        f"{full_sweep_sci['plan_id'].data[bad_cycle_indices]}"
     )
     logger.debug(
         f"Mode Id should be 3(HVSCI): {full_sweep_sci['mode'].data[bad_cycle_indices]}"
@@ -615,7 +615,7 @@ def process_swapi_science(
         attrs=cdf_manager.get_variable_attributes("sweep_table"),
     )
     dataset["plan_id"] = xr.DataArray(
-        good_sweep_sci["plan_id_science"].data.reshape(total_full_sweeps, 12)[:, 0],
+        good_sweep_sci["plan_id"].data.reshape(total_full_sweeps, 12)[:, 0],
         name="plan_id",
         dims=["epoch"],
         attrs=cdf_manager.get_variable_attributes("plan_id"),
