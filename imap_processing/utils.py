@@ -213,6 +213,7 @@ def packet_file_to_datasets(
     packet_file: str | Path,
     xtce_packet_definition: str | Path,
     use_derived_value: bool = False,
+    combine_segmented_packets: bool = False,
 ) -> dict[int, xr.Dataset]:
     """
     Convert a packet file to xarray datasets.
@@ -232,6 +233,10 @@ def packet_file_to_datasets(
         Path to XTCE file with filename.
     use_derived_value : bool, default False
         Whether or not to use the derived value from the XTCE definition.
+    combine_segmented_packets : bool, default False
+        Whether or not to combine segmented packets.
+        If True, segmented packets will be combined into a single packet
+        before parsing.
 
     Returns
     -------
@@ -259,7 +264,11 @@ def packet_file_to_datasets(
     packet_definition = spp.load_xtce(xtce_packet_definition)
 
     with open(packet_file, "rb") as binary_data:
-        for binary_packet in spp.ccsds_generator(binary_data):
+        for binary_packet in spp.ccsds_generator(
+            binary_data,
+            combine_segmented_packets=combine_segmented_packets,
+            secondary_header_bytes=0,
+        ):
             try:
                 packet = packet_definition.parse_bytes(binary_packet)
             except UnrecognizedPacketTypeError as e:

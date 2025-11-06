@@ -1540,8 +1540,8 @@
 				<xtce:BinaryDataEncoding bitOrder="mostSignificantBitFirst">
 					<xtce:SizeInBits>
 						<xtce:DynamicValue>
-							<xtce:ParameterInstanceRef parameterRef="PKT_LEN" />
-							<xtce:LinearAdjustment slope="8" intercept="-200" />
+							<xtce:ParameterInstanceRef parameterRef="COD_LO_PHA.BYTE_COUNT" />
+							<xtce:LinearAdjustment slope="8" intercept="0" />
 						</xtce:DynamicValue>
 					</xtce:SizeInBits>
 				</xtce:BinaryDataEncoding>
@@ -2488,8 +2488,8 @@
 				<xtce:BinaryDataEncoding bitOrder="mostSignificantBitFirst">
 					<xtce:SizeInBits>
 						<xtce:DynamicValue>
-							<xtce:ParameterInstanceRef parameterRef="PKT_LEN" />
-							<xtce:LinearAdjustment slope="8" intercept="-200" />
+							<xtce:ParameterInstanceRef parameterRef="COD_HI_PHA.BYTE_COUNT" />
+							<xtce:LinearAdjustment slope="8" intercept="0" />
 						</xtce:DynamicValue>
 					</xtce:SizeInBits>
 				</xtce:BinaryDataEncoding>
